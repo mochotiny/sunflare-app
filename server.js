@@ -73,6 +73,25 @@ app.post("/login", async (req, res) => {
 });
 
 
+app.post("/dashBoard", async (req, res) => {
+    const { token } = req.body;
+    try {
+        const user = await jwt.verify(token, JWT_SECRET);
+        console.log(user);
+        
+        const useremail = user.email;
+        User.findOne({email: useremail})
+        .then((dash) => {
+            res.send({status: "success", data: dash});
+        })
+        .catch((err) => {
+            res.send({status: "error", data: err});
+            
+        });
+        
+    } catch (err) { }
+});
+
 
 
 

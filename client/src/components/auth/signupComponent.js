@@ -20,7 +20,7 @@ export default class SignUp extends Component {
         console.log(fname, lname, email, role, password);
         fetch('http://localhost:5000/register', {
             method: 'POST',
-            crossDomain: true,
+            crossDomain: true,  
             headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json',

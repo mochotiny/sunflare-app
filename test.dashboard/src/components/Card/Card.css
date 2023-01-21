@@ -61,8 +61,8 @@
 /* ExpandedCard */
 .ExpandedCard {
   position: absolute;
-  width: 60%;
-  height: 70vh;
+  width: 50%;
+  height: 60vh;
   z-index: 9;
   left: 13rem;
   border-radius: 1rem;

@@ -2,11 +2,14 @@ const mongoose = require("mongoose");
 
 const VoucherDetailsSchema = new mongoose.Schema(
     {
-        fname: String,
-        lname: String,
-        email: { type: String, unique: true },
-        password: String,
-        role: String,
+        vouchid: { type: Number, unique: true },
+        amount: { type: Number },
+        description: { type: String },
+        created: { type: Date, default: Date.now },
+        resolved: { type: Date},
+        author: String,
+        resolver: String,
+        status: { type: String },
     },
     {
         collection: "VoucherInfo",
